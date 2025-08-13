@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:latihan_11pplg2/components/MyButton.dart';
 import 'package:latihan_11pplg2/components/MyTextField.dart';
 import 'package:latihan_11pplg2/controllers/calculator_controller.dart';
+import 'package:latihan_11pplg2/routes/routes.dart';
 
 class CalculatorPage extends StatelessWidget {
   CalculatorPage({super.key});
@@ -92,6 +93,13 @@ class CalculatorPage extends StatelessWidget {
                 ),
               );
             }),
+
+            Button(
+              buttonText: "Main",
+              onPressed: () {
+                Get.toNamed(AppRoutes.football);
+              },
+            ),
           ],
         ),
       ),
