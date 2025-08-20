@@ -11,7 +11,7 @@ class MainPage extends StatelessWidget {
   final List<String> pages = [
     AppRoutes.calculatorPage,
     AppRoutes.football,
-    AppRoutes.editFootball,
+    AppRoutes.profilePage,
   ];
 
   @override
