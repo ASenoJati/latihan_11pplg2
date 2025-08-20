@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:latihan_11pplg2/components/MyTextField.dart';
 import 'package:latihan_11pplg2/controllers/edit_football_player_controller.dart';
 import 'package:latihan_11pplg2/controllers/football_player_controller.dart';
-import 'package:latihan_11pplg2/model/PlayersModel.dart';
 
 class EditFootballPage extends StatelessWidget {
   EditFootballPage({super.key});
