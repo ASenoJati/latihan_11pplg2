@@ -5,9 +5,8 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("Profile")),
-      body: Padding(
+    return Container(
+      child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [

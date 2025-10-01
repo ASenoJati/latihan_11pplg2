@@ -1,56 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:latihan_11pplg2/controllers/main_controller.dart';
-import 'package:latihan_11pplg2/routes/routes.dart';
 
 class MainPage extends StatelessWidget {
   MainPage({super.key});
 
   final MainController controller = Get.put(MainController());
 
-  final List<String> pages = [
-    AppRoutes.calculatorPage,
-    AppRoutes.football,
-    AppRoutes.profilePage,
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Obx(
       () => Scaffold(
-        body: Navigator(
-          key: Get.nestedKey(1),
-          onGenerateRoute: (settings) {
-            return GetPageRoute(
-              settings: settings,
-              page: () => GetRouterOutlet.builder(
-                routerDelegate: Get.rootDelegate,
-                builder: (context, delegate, currentRoute) {
-                  return GetRouterOutlet(
-                    initialRoute: pages[controller.currentIndex.value],
-                    anchorRoute: '/',
-                  );
-                },
-              ),
-            );
-          },
-        ),
+        appBar: AppBar(title: Text("My Menu App")),
+        body: controller.pages[controller.selectedIndex.value],
         bottomNavigationBar: BottomNavigationBar(
-          currentIndex: controller.currentIndex.value,
-          onTap: (index) {
-            controller.changeIndex(index);
-            Get.toNamed(pages[index], id: 1);
-          },
+          onTap: controller.changeIndex,
+          currentIndex: controller.selectedIndex.value,
           items: const [
             BottomNavigationBarItem(
-              icon: Icon(Icons.calculate),
-              label: "Kalkulator",
+              icon: Icon(Icons.home_outlined),
+              label: "Home",
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.sports_soccer),
-              label: "Football",
+              icon: Icon(Icons.supervised_user_circle_sharp),
+              label: "Team",
             ),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person_2_outlined),
+              label: "Profile",
+            ),
           ],
         ),
       ),

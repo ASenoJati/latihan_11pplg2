@@ -26,10 +26,10 @@ class EditFootballPage extends StatelessWidget {
                 backgroundImage: AssetImage(player.image),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             Padding(
-              padding: EdgeInsets.only(bottom: 12.0),
+              padding: const EdgeInsets.only(bottom: 12.0),
               child: MyTextField(
                 controller: editController.nama,
                 labelText: "Nama",
@@ -37,7 +37,7 @@ class EditFootballPage extends StatelessWidget {
             ),
 
             Padding(
-              padding: EdgeInsets.only(bottom: 12.0),
+              padding: const EdgeInsets.only(bottom: 12.0),
               child: MyTextField(
                 controller: editController.posisi,
                 labelText: "Posisi",
@@ -45,17 +45,17 @@ class EditFootballPage extends StatelessWidget {
             ),
 
             Padding(
-              padding: EdgeInsets.only(bottom: 12.0),
+              padding: const EdgeInsets.only(bottom: 12.0),
               child: MyTextField(
                 controller: editController.nomorPunggung,
                 labelText: "Nomor Punggung",
               ),
             ),
 
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: editController.save,
-              child: Text("Simpan"),
+              child: const Text("Simpan"),
             ),
           ],
         ),
