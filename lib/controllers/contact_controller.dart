@@ -4,7 +4,7 @@ import 'package:latihan_11pplg2/helper/db_helper.dart';
 
 class ContactController extends GetxController {
   final TextEditingController nameController = TextEditingController();
-  final names = <String>[].obs;
+  final names = <Map<String, dynamic>>[].obs; // simpan id + name
   final _dbHelper = DBHelper();
 
   @override
@@ -15,7 +15,7 @@ class ContactController extends GetxController {
 
   Future<void> fetchNames() async {
     final data = await _dbHelper.getNames();
-    names.value = data.map((e) => e['name'] as String).toList();
+    names.value = data; // data berisi list<Map<String, dynamic>>
   }
 
   Future<void> addName() async {
@@ -23,6 +23,17 @@ class ContactController extends GetxController {
     if (text.isEmpty) return;
     await _dbHelper.insertName(text);
     nameController.clear();
+    fetchNames();
+  }
+
+  Future<void> updateName(int id, String newName) async {
+    if (newName.trim().isEmpty) return;
+    await _dbHelper.updateName(id, newName.trim());
+    fetchNames();
+  }
+
+  Future<void> deleteName(int id) async {
+    await _dbHelper.deleteName(id);
     fetchNames();
   }
 
