@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:latihan_11pplg2/components/MyButton.dart';
 import 'package:latihan_11pplg2/components/MyTextField.dart';
 import 'package:latihan_11pplg2/controllers/calculator_controller.dart';
-import 'package:latihan_11pplg2/routes/routes.dart';
 
 class CalculatorPage extends StatelessWidget {
   CalculatorPage({super.key});
@@ -15,7 +14,6 @@ class CalculatorPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Calculator")),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -93,13 +91,6 @@ class CalculatorPage extends StatelessWidget {
                 ),
               );
             }),
-
-            Button(
-              buttonText: "Main",
-              onPressed: () {
-                Get.toNamed(AppRoutes.football);
-              },
-            ),
           ],
         ),
       ),
