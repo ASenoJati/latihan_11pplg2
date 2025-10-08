@@ -38,4 +38,19 @@ class DBHelper {
     final client = await db;
     return client.query('contacts', orderBy: 'id DESC');
   }
+
+  Future<int> updateName(int id, String newName) async {
+    final client = await db;
+    return await client.update(
+      'contacts',
+      {'name': newName},
+      where: 'id = ?',
+      whereArgs: [id],
+    );
+  }
+
+  Future<int> deleteName(int id) async {
+    final client = await db;
+    return await client.delete('contacts', where: 'id = ?', whereArgs: [id]);
+  }
 }

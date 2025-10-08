@@ -1,9 +1,11 @@
 import 'package:get/get.dart';
 import 'package:latihan_11pplg2/bindings/calculator_binding.dart';
 import 'package:latihan_11pplg2/bindings/contact_binding.dart';
+import 'package:latihan_11pplg2/bindings/example_binding.dart';
 import 'package:latihan_11pplg2/pages/calculator_page.dart';
 import 'package:latihan_11pplg2/pages/contact_page.dart';
 import 'package:latihan_11pplg2/pages/edit_football_page.dart';
+import 'package:latihan_11pplg2/pages/example_page.dart';
 import 'package:latihan_11pplg2/pages/football_player.dart';
 import 'package:latihan_11pplg2/pages/main_page.dart';
 import 'package:latihan_11pplg2/pages/profile_page.dart';
@@ -24,6 +26,11 @@ class AppPages {
       name: AppRoutes.contactPage,
       page: () => ContactPage(),
       binding: ContactBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.examplePage,
+      page: () => ExamplePage(),
+      binding: ExampleBinding(),
     ),
   ];
 }
