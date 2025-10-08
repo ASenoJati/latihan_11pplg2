@@ -5,4 +5,5 @@ class AppRoutes {
   static const String profilePage = "/profile";
   static const String editFootball = "/editFootball";
   static const String contactPage = "/contact";
+  static const String examplePage = "/examplePage";
 }
