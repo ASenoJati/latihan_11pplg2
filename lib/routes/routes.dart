@@ -6,4 +6,6 @@ class AppRoutes {
   static const String editFootball = "/editFootball";
   static const String contactPage = "/contact";
   static const String examplePage = "/examplePage";
+  static const String loginPage = "/loginPage";
+  static const String premierePage = "/premierePage";
 }
