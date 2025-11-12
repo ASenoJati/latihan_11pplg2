@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "614005894959",
+    "project_id": "flutternotificaton-c9ee8",
+    "storage_bucket": "flutternotificaton-c9ee8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:614005894959:android:d8b8591dc09ae228d8bbda",
+        "android_client_info": {
+          "package_name": "com.example.latihan_11pplg2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "614005894959-tpikkhji9scqqtuu93iuiluvch8p0n3v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.latihan_11pplg2",
+            "certificate_hash": "0d8a8ef2d66b9616149eb001f7d15c586c317e86"
+          }
+        },
+        {
+          "client_id": "614005894959-1ajc4sn41d53jhl5kkfpqg00e84tu56n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAA5UCkvYWqn1IVBgbWQ4jyXcySrWUL2Vc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "614005894959-1ajc4sn41d53jhl5kkfpqg00e84tu56n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

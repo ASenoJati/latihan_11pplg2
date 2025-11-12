@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:latihan_11pplg2/controllers/profile_controller.dart';
 
 class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
+  ProfilePage({super.key});
+
+  final controller = Get.put(ProfileController());
 
   @override
   Widget build(BuildContext context) {
@@ -12,20 +16,36 @@ class ProfilePage extends StatelessWidget {
           children: [
             Center(
               child: CircleAvatar(
-                radius: 40,
-                backgroundImage: AssetImage("images/05542.jpg"),
+                radius: 50,
+                backgroundImage: controller.photoUrl.value.isNotEmpty
+                    ? NetworkImage(controller.photoUrl.value)
+                    : const AssetImage("assets/images/profile.png")
+                          as ImageProvider,
+                backgroundColor: Colors.grey[200],
               ),
             ),
             SizedBox(height: 20),
 
             Padding(
               padding: EdgeInsets.only(bottom: 12.0),
-              child: Text("A Seno Jati"),
+              child: Text(
+                controller.username.value,
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
             ),
 
             Padding(
               padding: EdgeInsets.only(bottom: 12.0),
-              child: Text("senojati16@gmail.com"),
+              child: Text(
+                controller.email.value,
+                style: TextStyle(fontSize: 16, color: Colors.grey[600]),
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                controller.logout();
+              },
+              child: Text("Logout"),
             ),
           ],
         ),

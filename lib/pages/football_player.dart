@@ -1,39 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:latihan_11pplg2/controllers/football_player_controller.dart';
-import 'package:latihan_11pplg2/routes/routes.dart';
+import 'package:latihan_11pplg2/controllers/responsive_football_controller.dart';
+import 'package:latihan_11pplg2/pages/football/football_mobile.dart';
+import 'package:latihan_11pplg2/pages/football/football_widescreen.dart';
 
 class FootballPlayer extends StatelessWidget {
   FootballPlayer({super.key});
 
-  final FootballPlayerController footballPlayerController = Get.put(
-    FootballPlayerController(),
-  );
+  final controller = Get.put(ResponsiveFootballController());
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(10),
-      child: Obx(
-        () => ListView.builder(
-          itemCount: footballPlayerController.players.length,
-          itemBuilder: (context, index) {
-            return ListTile(
-              onTap: () {
-                Get.toNamed(
-                  AppRoutes.editFootball,
-                  arguments: {'index': index},
-                );
-              },
-              leading: CircleAvatar(
-                backgroundImage: AssetImage(
-                  footballPlayerController.players[index].image,
-                ),
-              ),
-              title: Text(footballPlayerController.players[index].nama),
-            );
-          },
-        ),
+    return Scaffold(
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          controller.updateLayout(constraints);
+          return Obx(
+            () => controller.isMobile.value
+                ? FootballMobile()
+                : FootballWidescreen(),
+          );
+        },
       ),
     );
   }
